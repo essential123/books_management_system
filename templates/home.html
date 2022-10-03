@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="/static/bootstrap-3.4.1-dist/css/bootstrap.css">
+    <script src="/static/bootstrap-3.4.1-dist/js/bootstrap.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">BMS</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">图书 <span class="sr-only">(current)</span></a></li>
+                <li><a href="#">出版社</a></li>
+                <li><a href="#">作者</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">更多 <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">One more separated link</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <form class="navbar-form navbar-left">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                </div>
+                <button type="submit" class="btn btn-default">搜索</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">登录</a></li>
+                <li><a href="#">注册</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">设置 <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="list-group">
+                <a href="{% url 'app01_home_view' %}" class="list-group-item active">
+                    首页
+                </a>
+                <a href="{% url 'app01_booklist_view' %}" class="list-group-item">图书列表</a>
+                <a href="#" class="list-group-item">作者列表</a>
+                <a href="#" class="list-group-item">出版社列表</a>
+                <a href="#" class="list-group-item">更多操作</a>
+            </div>
+            <div class="list-group">
+                <a href="{% url 'app01_home_view' %}" class="list-group-item active">
+                    首页
+                </a>
+                <a href="{% url 'app01_booklist_view' %}" class="list-group-item">图书列表</a>
+                <a href="#" class="list-group-item">作者列表</a>
+                <a href="#" class="list-group-item">出版社列表</a>
+                <a href="#" class="list-group-item">更多操作</a>
+            </div>
+            <div class="list-group">
+                <a href="{% url 'app01_home_view' %}" class="list-group-item active">
+                    首页
+                </a>
+                <a href="{% url 'app01_booklist_view' %}" class="list-group-item">图书列表</a>
+                <a href="#" class="list-group-item">作者列表</a>
+                <a href="#" class="list-group-item">出版社列表</a>
+                <a href="#" class="list-group-item">更多操作</a>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Panel title</h3>
+                </div>
+                <div class="panel-body">
+                    {% block content %}
+                        <div class="jumbotron">
+                            <h1>世界最大的图书管理平台</h1>
+                            <p>...</p>
+                            <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6 col-md-4">
+                                <div class="thumbnail">
+                                    <img src="https://www.lib.pku.edu.cn/portal/sites/default/files/styles/frontpage_bg_cover_image/public/slideshow/images/20220511.jpg?itok=sDv6JC0S" alt="...">
+                                    <div class="caption">
+                                        <h3>灵气所钟</h3>
+                                        <p>山东临朐红丝砚历史文化展围绕“红丝砚”这一内涵深蕴的中国传统文化标识，顺千年文化长河而下，从“诗、石、史、士”四种视角回望先辈成就，将一部绵延至今而不绝的历史书画长卷徐徐展开。"</p>
+                                        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#"
+                                                                                                           class="btn btn-default"
+                                                                                                           role="button">Button</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-4">
+                                <div class="thumbnail">
+                                    <img src="https://www.lib.pku.edu.cn/portal/sites/default/files/styles/frontpage_bg_cover_image/public/slideshow/images/20220831101457.jpg?itok=AmPV1yQB" alt="...">
+                                    <div class="caption">
+                                        <h3>未名揽月 书续芳华</h3>
+                                        <p>2022年图书馆以“书香迢递，斯文在兹：共读《中华文明史》”为主题，举办阅读文化节。通过讲座、展览、影展、文化工作坊等系列活动，让不同学科的同学了解中华上下五千年的文明和历史。</p>
+                                        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#"
+                                                                                                           class="btn btn-default"
+                                                                                                           role="button">Button</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-4">
+                                <div class="thumbnail">
+                                    <img src="https://www.lib.pku.edu.cn/portal/sites/default/files/styles/frontpage_bg_cover_image/public/slideshow/images/20220615.png?itok=swtvpiGl" alt="...">
+                                    <div class="caption">
+                                        <h3>燕飞万里·书寄相思</h3>
+                                        <p><div class="field-content">紫藤花开，又听夏蝉鸣；杨柳依依，再唱燕园情！首次推出线上留言打卡活动，欢迎广大用户积极参与到我们图书馆留言墙的留言活动，留下属于你的云端印记，快来参加吧!</p>
+                                        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#"
+                                                                                                           class="btn btn-default"
+                                                                                                           role="button">Button</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="/static/bootstrap-3.4.1-dist/css/bootstrap.css">
+    <script src="/static/bootstrap-3.4.1-dist/js/bootstrap.js"></script>
+</head>
+<body>
+
+<input type="text" id="d1">+<input type="text" id="d2">=<input type="text" id="d3">
+<input type="button" value="计算" id="subBtn">
+
+<script>
+    $('#subBtn').click(function (){
+        $.ajax({
+            url:'',
+            type:'post',
+            data:{'name':'tom'},
+            success:function (){
+                alert('后端接收到了请求，并且给出了一定的反馈')
+            }
+        })
+    })
+</script>
+</body>
+</html>

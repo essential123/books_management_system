@@ -1,0 +1,64 @@
+{% extends 'home.html' %}
+{% block content %}
+    <h1 class="text-center">图书展示页</h1>
+    <a href="{% url 'app01_book_add_view' %}" class="btn btn-xs btn-success">添加书籍</a>
+    <div>
+        <form action="" method="post">
+            <table class="table table-hover table-striped">
+                <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>书名</th>
+                    <th>价格</th>
+                    <th>出版社</th>
+                    <th>作者</th>
+                    <th>出版时间</th>
+                    <th>operator</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for book_obj in book_queryset %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ book_obj.title }}</td>
+                        <td>{{ book_obj.price }}</td>
+                        <td>{{ book_obj.publish.name }}</td>
+                        <td> {% for author_obj in book_obj.authors.all %}
+                            {% if forloop.last %}
+                                <span>{{ author_obj.name }}</span>
+                                {% else %}
+                                <span>{{ author_obj.name }},</span>
+                            {% endif %}
+                        {% endfor %}
+                        </td>
+                        <td>{{ book_obj.publish_time }}</td>
+                        <td>
+                            <a href="{% url 'app01_book_edit_view' book_obj.pk %}" class="btn btn-xs btn-primary">编辑书籍</a>
+                            <a href="{% url 'app01_book_del_view' %}" class="btn btn-danger btn-xs">删除书籍</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </form>
+        <nav aria-label="Page navigation" class="text-center">
+            <ul class="pagination">
+                <li>
+                    <a href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li>
+                    <a href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+{% endblock %}
